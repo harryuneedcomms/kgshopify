@@ -2,52 +2,172 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Terms of Use Agreement - One-Second Signup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Use - One-Second Signup</title>
+  <!-- 구글 폰트 예시 (원하는 폰트 사용 가능) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" 
+    rel="stylesheet"
+  >
   <style>
+    /* ------------------------------
+       Reset & Font
+    ------------------------------ */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
     body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
+      font-family: 'Inter', sans-serif;
       line-height: 1.6;
-      background-color: #f9f9f9;
       color: #333;
+      background-color: #f9f9f9;
     }
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    /* ------------------------------
+       Header & Navigation
+    ------------------------------ */
+    header {
       background-color: #fff;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
-    h1, h2 {
-      color: #1d1d1d;
+    header nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.8rem 1rem;
     }
-    h1 {
+    header .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #3E4AFE; /* 메인 컬러 예시 */
+    }
+    header .menu ul {
+      display: flex;
+      gap: 1.5rem;
+    }
+    header .menu li a {
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    header .menu li a:hover {
+      color: #3E4AFE;
+    }
+
+    /* ------------------------------
+       Main Layout
+    ------------------------------ */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .terms-container {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .terms-container h1 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
+      color: #1d1d1d;
     }
-    h2 {
+    .terms-container h2 {
       margin-top: 1.5rem;
       margin-bottom: 0.5rem;
       font-size: 1.3rem;
+      color: #1d1d1d;
     }
-    p {
+    .terms-container p {
+      margin-bottom: 1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+    .terms-container ul {
+      list-style: disc;
+      margin-left: 1.5rem;
       margin-bottom: 1rem;
     }
-    ul {
-      margin-bottom: 1rem;
-      list-style-type: disc;
-      padding-left: 1.5rem;
+    .terms-container li {
+      margin-bottom: 0.5rem;
+    }
+    .terms-container em {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* ------------------------------
+       Footer
+    ------------------------------ */
+    footer {
+      margin-top: 2rem;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      padding: 2rem 1rem;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      color: #555;
+    }
+    .footer-content p {
+      margin-bottom: 0.5rem;
+    }
+    .footer-links {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #3E4AFE;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Terms of Use Agreement</h1>
+<!-- Header -->
+<header>
+  <nav>
+    <div class="logo">One-Second Signup</div>
+    <div class="menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
+<!-- Main -->
+<main>
+  <div class="terms-container">
+    <h1>Terms of Use Agreement</h1>
     <p>
       These terms and conditions (“Agreement”) set forth the general terms and conditions 
       of your use of the <strong>One-Second Signup</strong> service (“Website” or “Service”) 
@@ -206,7 +326,20 @@
     </p>
 
     <p><em>This document was last updated on February 17, 2025.</em></p>
-
   </div>
+</main>
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="footer-content">
+    <p>© 2025 One-Second Signup</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
