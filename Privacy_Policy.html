@@ -4,37 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Privacy Policy - One-Second Signup</title>
+  <!-- 예시: 구글 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" 
+    rel="stylesheet"
+  >
   <style>
+    /* ------------------------------
+       Reset & Font
+    ------------------------------ */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
     body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
+      font-family: 'Inter', sans-serif;
       line-height: 1.6;
       background-color: #f9f9f9;
       color: #333;
     }
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ------------------------------
+       Header & Navigation
+    ------------------------------ */
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    header nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.8rem 1rem;
+    }
+    header .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #3E4AFE; /* 메인 컬러 예시 */
+    }
+    header .menu ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    header .menu li a {
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    header .menu li a:hover {
+      color: #3E4AFE;
+    }
+
+    /* ------------------------------
+       Main Layout
+    ------------------------------ */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .policy-container {
       background-color: #fff;
       border-radius: 6px;
+      padding: 2rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    h1, h2, h3 {
-      color: #1d1d1d;
-    }
-    h1 {
+    .policy-container h1 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
+      color: #1d1d1d;
     }
-    h2 {
+    .policy-container h2 {
       margin-top: 1.5rem;
       margin-bottom: 0.5rem;
       font-size: 1.3rem;
+      color: #1d1d1d;
     }
-    p {
+    .policy-container p {
       margin-bottom: 1rem;
+      line-height: 1.6;
     }
     .contact-info {
       margin-top: 1rem;
@@ -45,10 +103,63 @@
     .contact-info p {
       margin: 0.3rem 0;
     }
+
+    /* ------------------------------
+       Footer
+    ------------------------------ */
+    footer {
+      margin-top: 2rem;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      padding: 2rem 1rem;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      color: #555;
+    }
+    .footer-content p {
+      margin-bottom: 0.5rem;
+    }
+    .footer-links {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #3E4AFE;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+
+<!-- Header -->
+<header>
+  <nav>
+    <div class="logo">One-Second Signup</div>
+    <div class="menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Main -->
+<main>
+  <div class="policy-container">
     <h1>Privacy Policy</h1>
 
     <h2>Who We Are</h2>
@@ -119,7 +230,20 @@
       <p>서울 마포구 양화로 81, L105호, Republic of Korea</p>
       <p>Email: <strong>info@uneedcomms.com</strong></p>
     </div>
-
   </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <p>© 2025 One-Second Signup</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
