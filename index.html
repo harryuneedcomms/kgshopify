@@ -55,16 +55,40 @@
       font-size: 1.2rem;
       color: #3E4AFE; /* 메인 컬러 예시 */
     }
-    header .menu ul {
+    header .logo a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* 메뉴 컨테이너 */
+    .menu {
+      display: flex;
+      align-items: center;
+      /* 초기 상태에서는 PC에서 보이도록 유지 */
+    }
+
+    /* 실제 메뉴 리스트 */
+    .menu ul {
       display: flex;
       gap: 1.5rem;
     }
-    header .menu li a {
+    .menu li a {
       font-weight: 600;
       transition: color 0.3s;
     }
-    header .menu li a:hover {
+    .menu li a:hover {
       color: #3E4AFE;
+    }
+
+    /* MENU 토글 버튼 (모바일 전용) */
+    .menu-toggle {
+      display: none; /* PC에서는 안 보임 */
+      background: none;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #3E4AFE; 
     }
 
     main {
@@ -73,10 +97,24 @@
       padding: 2rem 1rem;
     }
 
-    /* 반응형 간단 예시 */
+    /* ------------------------------
+       반응형 처리
+    ------------------------------ */
     @media (max-width: 768px) {
-      header .menu ul {
-        gap: 1rem;
+      /* 토글 버튼 보이게 */
+      .menu-toggle {
+        display: block;
+      }
+      /* 메뉴 리스트는 기본적으로 숨김 */
+      .menu ul {
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      /* .menu.open 클래스가 붙으면 ul 보이기 */
+      .menu.open ul {
+        display: flex;
       }
     }
 
@@ -422,8 +460,15 @@
 <!-- 헤더 -->
 <header>
   <nav>
-    <div class="logo"><a href="/index">1초 회원가입 for Shopify</a></div>
+    <div class="logo">
+      <a href="/index">1초 회원가입 for Shopify</a>
+    </div>
+
+    <!-- 메뉴 컨테이너 -->
     <div class="menu">
+      <!-- 모바일에서만 보이는 MENU 버튼 -->
+      <button class="menu-toggle" type="button">MENU</button>
+      <!-- 실제 메뉴 리스트 -->
       <ul>
         <li><a href="#problem">Problem</a></li>
         <li><a href="#solution">Solution</a></li>
@@ -450,7 +495,7 @@
     </div>
   </section>
 
-  <!-- Problem Statement -->
+  <!-- Problem Section -->
   <section id="problem" class="problem-section">
     <h2 class="section-title">이런 문제가 있지 않으신가요?</h2>
     <div class="problem-list">
@@ -636,28 +681,24 @@
 </footer>
 
 <script>
-  // ----------------------------
   // FAQ 아코디언(토글) 기능
-  // ----------------------------
   const faqHeaders = document.querySelectorAll('.faq-item h4');
   faqHeaders.forEach((header) => {
     header.addEventListener('click', () => {
       const faqItem = header.parentElement;
-      // 다른 FAQ가 열려 있으면 닫고 싶다면 아래 주석 해제(아코디언 단일 열림)
-      /*
-      document.querySelectorAll('.faq-item').forEach(item => {
-        if(item !== faqItem) item.classList.remove('active');
-      });
-      */
       faqItem.classList.toggle('active');
     });
   });
 
-  // ----------------------------
+  // MENU 버튼 토글 기능
+  const menuToggleBtn = document.querySelector('.menu-toggle');
+  const menuContainer = document.querySelector('.menu');
+
+  menuToggleBtn.addEventListener('click', () => {
+    menuContainer.classList.toggle('open');
+  });
+
   // Google One Tap 예시 (실제 구현 시)
-  // ----------------------------
-  // 아래 코드는 실제로 동작하지 않는 예시로, 실제 구현을 위해서는 
-  // 구글 클라이언트 ID를 발급받고, 구글 플랫폼 라이브러리를 불러와야 합니다.
   /*
   window.onload = function () {
     google.accounts.id.initialize({
@@ -666,14 +707,14 @@
     });
     google.accounts.id.renderButton(
       document.getElementById("buttonDiv"),
-      { theme: "outline", size: "large" } // 커스텀 옵션
+      { theme: "outline", size: "large" }
     );
-    google.accounts.id.prompt(); // 자동 팝업/배너
+    google.accounts.id.prompt();
   };
 
   function handleCredentialResponse(response) {
     // JWT 토큰 or user credential 처리 로직
-    // Shopify 고객 데이터베이스와 연동
+    // Shopify 고객 DB 연동
   }
   */
 </script>
