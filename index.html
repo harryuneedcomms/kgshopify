@@ -30,7 +30,6 @@
     }
     ul {
       list-style: none;
-      padding-left: 0;
     }
 
     /* ------------------------------
@@ -82,11 +81,9 @@
       margin: 0 auto;
       max-width: 1200px;
     }
-    /* 아래처럼 open 시 표시 (단순 display 예시) */
     .dropdown-menu.open {
       display: block;
     }
-    /* 메뉴 리스트 스타일 */
     .dropdown-menu ul {
       display: flex;
       flex-direction: column;
@@ -109,8 +106,9 @@
       padding: 2rem 1rem;
     }
 
-    /* Hero Section 등 기존 스타일 그대로 복사 (생략 가능) */
-
+    /* ------------------------------
+       Hero Section
+    ------------------------------ */
     .hero {
       display: flex;
       flex-direction: column;
@@ -132,17 +130,17 @@
       margin-bottom: 2rem;
       max-width: 600px;
     }
-    .cta-buttons {
+    .hero .cta-buttons {
       display: flex;
       gap: 1rem;
     }
-    .btn {
+    .hero .btn {
       display: inline-block;
       padding: 0.8rem 1.5rem;
       font-weight: 600;
       border-radius: 4px;
-      cursor: pointer;
       transition: background-color 0.3s;
+      cursor: pointer;
     }
     .btn-primary {
       background-color: #fff;
@@ -160,17 +158,281 @@
       background-color: rgba(255,255,255,0.2);
     }
 
-    /* 이하 Problem, Solution, Features, etc. 
-       기존 섹션 스타일 그대로 복사 사용 가능
-       (여기서는 길어지니 생략) */
+    /* ------------------------------
+       Section Title
+    ------------------------------ */
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
 
-    /* 푸터 */
+    /* ------------------------------
+       Problem Section
+    ------------------------------ */
+    .problem-section {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .problem-list {
+      display: grid;
+      gap: 1rem;
+    }
+    .problem-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .problem-item h4 {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .problem-item p {
+      margin-left: 2rem;
+      color: #555;
+    }
+
+    /* ------------------------------
+       Solution Section
+    ------------------------------ */
+    .solution-section {
+      margin-bottom: 3rem;
+    }
+    .solution-inner {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+    .solution-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .solution-text p {
+      line-height: 1.6;
+      color: #555;
+    }
+    .solution-img {
+      text-align: center;
+    }
+    .solution-img img {
+      max-width: 80%;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 768px) {
+      .solution-inner {
+        grid-template-columns: 1fr;
+      }
+      .solution-img img {
+        max-width: 100%;
+      }
+    }
+
+    /* ------------------------------
+       Features Section
+    ------------------------------ */
+    .features-section {
+      margin-bottom: 3rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .feature-card h4 {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #3E4AFE;
+    }
+    .feature-card p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    /* ------------------------------
+       How It Works (Steps)
+    ------------------------------ */
+    .how-it-works {
+      margin-bottom: 3rem;
+    }
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .step {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .step h4 {
+      font-size: 1rem;
+      color: #3E4AFE;
+      margin-bottom: 0.5rem;
+    }
+    .step p {
+      color: #555;
+    }
+
+    /* ------------------------------
+       Social Proof (Testimonials)
+    ------------------------------ */
+    .social-proof {
+      margin-bottom: 3rem;
+    }
+    .testimonials {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    .testimonial {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .testimonial p {
+      font-style: italic;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+    .testimonial .author {
+      font-weight: 600;
+      color: #333;
+    }
+
+    /* ------------------------------
+       Pricing Section
+    ------------------------------ */
+    .pricing-section {
+      margin-bottom: 3rem;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.5rem;
+    }
+    .pricing-card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+    .pricing-card h4 {
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .pricing-card .price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #3E4AFE;
+    }
+    .pricing-card p {
+      margin-bottom: 1rem;
+      color: #555;
+    }
+    .pricing-card .btn-plan {
+      display: inline-block;
+      padding: 0.8rem 1.2rem;
+      border-radius: 4px;
+      border: none;
+      background-color: #3E4AFE;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .pricing-card .btn-plan:hover {
+      background-color: #2f37c0;
+    }
+
+    /* ------------------------------
+       FAQ Section (Accordion Style)
+    ------------------------------ */
+    .faq-section {
+      margin-bottom: 3rem;
+    }
+    .faq-item {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      margin-bottom: 1rem;
+      padding: 1rem 1.5rem;
+      position: relative;
+    }
+    .faq-item h4 {
+      font-size: 1rem;
+      color: #3E4AFE;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      padding-right: 20px; /* 우측에 아이콘 자리 확보 */
+    }
+    .faq-item h4::after {
+      content: "+";
+      position: absolute;
+      right: 1.5rem;
+      top: 1rem;
+      color: #3E4AFE;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+    .faq-item.active h4::after {
+      content: "-";
+      transform: rotate(180deg);
+    }
+    .faq-item p {
+      color: #555;
+      font-size: 0.95rem;
+      display: none; 
+      margin-top: 0.5rem;
+      line-height: 1.4;
+    }
+    .faq-item.active p {
+      display: block;
+    }
+
+    /* ------------------------------
+       푸터
+    ------------------------------ */
     footer {
       margin-top: 2rem;
       padding: 2rem 1rem;
       background-color: #fff;
       box-shadow: 0 -2px 6px rgba(0,0,0,0.06);
       text-align: center;
+    }
+    .footer-links {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #3E4AFE;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -186,7 +448,7 @@
   </nav>
 </header>
 
-<!-- 박스형 메뉴 (헤더 아래 위치) -->
+<!-- 박스형 드롭다운 메뉴 (헤더 아래) -->
 <div class="dropdown-menu" id="dropdownMenu">
   <ul>
     <li><a href="#problem">Problem</a></li>
@@ -198,7 +460,7 @@
   </ul>
 </div>
 
-<!-- 메인 영역 -->
+<!-- 메인 -->
 <main>
   <!-- Hero Section -->
   <section class="hero">
@@ -211,34 +473,224 @@
     </div>
   </section>
 
-  <!-- Problem, Solution, Features, etc. 섹션들
-       ... (생략) ...
-  -->
+  <!-- Problem Section -->
+  <section id="problem" class="problem-section">
+    <h2 class="section-title">이런 문제가 있지 않으신가요?</h2>
+    <div class="problem-list">
+      <div class="problem-item">
+        <h4>회원가입 이탈률</h4>
+        <p>복잡한 양식으로 인해 쇼핑몰 방문자가 가입 도중 포기하는 경우가 많습니다.</p>
+      </div>
+      <div class="problem-item">
+        <h4>낮은 이메일 수신 동의율</h4>
+        <p>가입은 시켜도, 이메일 수신에 동의하지 않아 마케팅 효과가 떨어집니다.</p>
+      </div>
+      <div class="problem-item">
+        <h4>글로벌 고객 확장 어려움</h4>
+        <p>국내 인증 수단만 고집하면 해외 잠재 고객의 가입 장벽이 높아집니다.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Solution Section -->
+  <section id="solution" class="solution-section">
+    <h2 class="section-title">Google One Tap으로 해결!</h2>
+    <div class="solution-inner">
+      <div class="solution-text">
+        <h3>간편 회원가입 & 이메일 동의 확보를 한 번에</h3>
+        <p>
+          Google One Tap Sign-in은 구글 계정 정보를 활용해 클릭 한 번으로 회원가입을 마무리합니다.  
+          가입 시점에 이메일 수신 동의 옵션을 자연스럽게 노출하여, 번거로운 절차 없이도 동의율을 극대화합니다.
+        </p>
+      </div>
+      <div class="solution-img">
+        <img src="https://via.placeholder.com/400x300?text=Google+One+Tap+Mockup" 
+             alt="Google One Tap Mockup" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Features & Benefits -->
+  <section id="features" class="features-section">
+    <h2 class="section-title">주요 기능 및 장점</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h4>원클릭 회원가입</h4>
+        <p>복잡한 폼 없이 클릭 한 번으로 신규 가입을 완료, 가입 이탈률을 획기적으로 줄입니다.</p>
+      </div>
+      <div class="feature-card">
+        <h4>이메일 마케팅 극대화</h4>
+        <p>가입 시점에 수신 동의를 받아, 프로모션 캠페인 성공률과 매출을 높입니다.</p>
+      </div>
+      <div class="feature-card">
+        <h4>글로벌 확장성</h4>
+        <p>구글 계정을 쓰는 전 세계 누구나 가입 가능, 해외 고객 유치에도 효과적입니다.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Shopify와 완벽 연동</h4>
+        <p>새로 가입된 고객 정보를 Shopify 고객 DB에 자동 반영, 추가 설정이 필요 없습니다.</p>
+      </div>
+      <div class="feature-card">
+        <h4>보안 & 개인정보 보호</h4>
+        <p>Google OAuth 2.0 표준을 따르며, 데이터 암호화로 고객 정보를 안전하게 관리합니다.</p>
+      </div>
+      <div class="feature-card">
+        <h4>간편 설정</h4>
+        <p>앱 설치 후 구글 OAuth Client ID 입력만 하면 끝! 별도의 코딩 지식이 필요 없습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <h2 class="section-title">사용 방법은 간단합니다</h2>
+    <div class="steps">
+      <div class="step">
+        <h4>1. Shopify 앱 설치</h4>
+        <p>Shopify 앱 스토어에서 “1초 회원가입 for Shopify”를 검색 후 설치합니다.</p>
+      </div>
+      <div class="step">
+        <h4>2. Google API 콘솔 연결</h4>
+        <p>구글 API 콘솔에서 Client ID, Secret Key를 발급받아 앱 설정 화면에 붙여넣습니다.</p>
+      </div>
+      <div class="step">
+        <h4>3. One Tap 활성화</h4>
+        <p>방문 고객에게 Google One Tap 팝업이 자동 노출, 클릭만으로 가입이 완료됩니다.</p>
+      </div>
+      <div class="step">
+        <h4>4. 이메일 동의 체크</h4>
+        <p>원하는 경우 가입 시점에 이메일 마케팅 수신 동의를 받도록 설정할 수 있습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof / Testimonials -->
+  <section class="social-proof">
+    <h2 class="section-title">고객 후기</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>“이전에는 가입 이탈이 심해서 고민이었는데, 구글 원탭 적용 후 가입 전환율이 40%나 올랐어요!”</p>
+        <div class="author">- 쇼핑몰 A 대표님</div>
+      </div>
+      <div class="testimonial">
+        <p>“해외 고객들이 그냥 구글 계정으로 가입하니, 글로벌 매출도 늘었어요. 생각보다 쉽고 간단합니다.”</p>
+        <div class="author">- 이커머스 B 마케터</div>
+      </div>
+      <div class="testimonial">
+        <p>“이메일 마케팅 동의율이 올라서 뉴스레터 오픈율도 급상승 중! 매출 성장세가 눈에 보여요.”</p>
+        <div class="author">- DTC 브랜드 C</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing-section">
+    <h2 class="section-title">가격 안내</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h4>무료 체험 (14일)</h4>
+        <div class="price">Free Trial</div>
+        <p>모든 기능을 제한 없이 사용해보고 결정하세요.</p>
+        <button class="btn-plan">바로 시작하기</button>
+      </div>
+      <div class="pricing-card">
+        <h4>스타터 플랜</h4>
+        <div class="price">$X / 월</div>
+        <p>One Tap 회원가입, 이메일 수신 동의, 기본 지원</p>
+        <button class="btn-plan">플랜 선택</button>
+      </div>
+      <div class="pricing-card">
+        <h4>프로 플랜</h4>
+        <div class="price">$Y / 월</div>
+        <p>고급 대시보드, 우선 지원, 다국어 브랜딩 등 풀패키지</p>
+        <button class="btn-plan">플랜 선택</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (Accordion) -->
+  <section id="faq" class="faq-section">
+    <h2 class="section-title">자주 묻는 질문 (FAQ)</h2>
+
+    <div class="faq-item">
+      <h4>무료 체험은 어떻게 시작하나요?</h4>
+      <p>Shopify 앱 스토어에서 설치하면, 14일 무료 체험이 자동 적용됩니다.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Google One Tap 이외에 다른 소셜 로그인도 지원하나요?</h4>
+      <p>현재는 구글만 지원하지만, 추후 페이스북, 애플 로그인 등도 확장 예정입니다.</p>
+    </div>
+    <div class="faq-item">
+      <h4>이메일 마케팅 툴은 어떤 것을 연동할 수 있나요?</h4>
+      <p>Klaviyo, Mailchimp, ActiveCampaign 등 Shopify와 호환되는 대부분의 툴과 연동 가능합니다.</p>
+    </div>
+    <div class="faq-item">
+      <h4>개인정보는 안전하게 관리되나요?</h4>
+      <p>Google OAuth 2.0 표준을 따르며, 암호화된 방식으로만 고객 정보를 저장합니다. 
+         자세한 사항은 개인정보 처리방침을 참조하세요.</p>
+    </div>
+    <div class="faq-item">
+      <h4>설치/세팅에 어려움이 있으면 어떻게 하나요?</h4>
+      <p>앱 관리자 페이지의 고객센터 또는 support@1seclogin.com으로 문의주시면 됩니다.</p>
+    </div>
+  </section>
 </main>
 
 <!-- 푸터 -->
-<footer>
+<footer id="footer">
   <p>© 2025 1초 회원가입 for Shopify</p>
+  <div class="footer-links">
+    <a href="Privacy_Policy.html">개인정보 처리방침</a>
+    <a href="Terms_of_Use_Agreement.html">이용약관</a>
+    <a href="#">문의하기</a>
+  </div>
 </footer>
 
 <script>
-  // 메뉴 토글 버튼
+  // 메뉴 열기/닫기
   const menuToggleBtn = document.querySelector('.menu-toggle');
   const dropdownMenu = document.getElementById('dropdownMenu');
 
-  // 토글 버튼 클릭 -> .dropdown-menu에 .open 클래스를 토글
   menuToggleBtn.addEventListener('click', () => {
     dropdownMenu.classList.toggle('open');
   });
 
-  // 메뉴 링크 클릭 시 자동 닫기
+  // 메뉴 항목 클릭 시 자동 닫기
   const menuLinks = dropdownMenu.querySelectorAll('a');
   menuLinks.forEach(link => {
     link.addEventListener('click', () => {
       dropdownMenu.classList.remove('open');
     });
   });
+
+  // FAQ 아코디언(토글) 기능
+  const faqHeaders = document.querySelectorAll('.faq-item h4');
+  faqHeaders.forEach((header) => {
+    header.addEventListener('click', () => {
+      const faqItem = header.parentElement;
+      faqItem.classList.toggle('active');
+    });
+  });
+
+  // Google One Tap 예시 (실제 구현 시)
+  /*
+  window.onload = function () {
+    google.accounts.id.initialize({
+      client_id: "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com",
+      callback: handleCredentialResponse
+    });
+    google.accounts.id.renderButton(
+      document.getElementById("buttonDiv"),
+      { theme: "outline", size: "large" }
+    );
+    google.accounts.id.prompt();
+  };
+
+  function handleCredentialResponse(response) {
+    // JWT 토큰 or user credential 처리 로직
+    // Shopify 고객 DB와 연동
+  }
+  */
 </script>
 
 </body>
